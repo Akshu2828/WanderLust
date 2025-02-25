@@ -1,127 +1,172 @@
-body{
-    font-family: "Plus Jakarta Sans", sans-serif !important;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .container{
-      flex: 1;
-  }
-  
-  /* Navbar */
-  
-  .navbar{
-      height: 5rem;
-      background-color: white;
-  }
-  
-  .fa-compass {
-      color: #fe424d;
-      font-size: 2rem;
-  }
-  
-  .nav-link{
-      color: #222222 !important;
-  }
-  
-  /* Footer */ 
-  
-  .f-info-links a {
-      text-decoration: none;
-      color:#222222;
-  }
-  
-  .f-info-links a:hover {
-      text-decoration: underline;
-  }
-  
-  .f-info-links, .f-info-socials, .f-info-brand {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .f-info-socials i {
-      font-size: 1.2rem;
-      margin-right: 1rem;
-  }
-  
-  .f-info{
-      text-align: center;
-      height: 8rem;
-      background-color: #ebebeb;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: space-evenly;
-  }
-  
-  /* Cards */
-  
-  .listing-card{
-      border: none !important;
-      margin-bottom: 2rem;
-  }
-  
-  .card-img-top {
-      border-radius: 1rem !important;
-      width: 100% !important;
-      object-fit: cover !important;
-  }
-  
-  .card-body {
-      padding: 0 !important;
-  }
-  
-  .listing-link{
-      text-decoration: none;
-      display: inline-block;
-  }
-  
-  /* CARD EFFECT */
-  
-  .card-img-overlay{
-      opacity:0;
-  }
-  
-  .card-img-overlay:hover{
-      opacity: 0.2;
-      background-color: white;
-  }
-   /* add page */
-  .add-btn{
-      background-color:  #fe424d !important;
-      border: none !important;
-  }
-  
-  /* edit page */
-  
-  .edit-btn{
-      background-color:  #fe424d !important;
-      border: none !important;
-  }
-  
-  /* show page */
-  
-  .show-img{
-      height: 30vh;
-  }
-  
-  .btns{
-      display: flex;
-  }
-  
-  .show-card{
-      padding-left: 0;
-      padding-right: 0;
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+
+/* Navbar */
+
+.navbar {
+  height: 5rem;
+  background-color: white;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+
+/* making navbar responsive */
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background: white; /* White background to prevent overlap */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
+  /* Center search bar on mobile */
+  .search-container {
+    width: 100%;
+    display: none; /* Hide initially */
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Show search when navbar expands */
+  .navbar-collapse.show .search-container {
+    display: block;
+  }
+
+  .search-inp {
+    width: 100%;
+    padding: 0.5rem 1rem;
+  }
+
+  .search-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+/* Footer */
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-info-socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.f-info {
+  text-align: center;
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+}
+
+/* Cards */
+
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.listing-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* CARD EFFECT */
+
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+/* add page */
+.add-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+/* edit page */
+
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+/* show page */
+
+.show-img {
+  height: 30vh;
+}
+
+.btns {
+  display: flex;
+}
+
+.show-card {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 /* Map */
 
-#map{
-    height: 400px;
-    width: 100vh;
+#map {
+  height: 400px;
+  max-width: 100%;
+}
+
+@media (max-width: 450px) {
+  #map {
+    height: 250px;
+    width: 100%;
+  }
 }
